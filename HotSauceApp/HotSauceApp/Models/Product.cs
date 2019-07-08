@@ -14,5 +14,9 @@ namespace HotSauceApp.Models
         public string SKU { get; set; }
         public int Quantity { get; set; }
         public int Spicyness { get; set; }
+
+        //Navigational Properties
+        public CartProduct CartProduct { get; set; }
+        public CheckoutProduct CheckoutProduct { get; set; }
     }
 }
