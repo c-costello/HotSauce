@@ -12,5 +12,20 @@ namespace HotSauceApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+        public IActionResult Previous()
+        {
+            return View();
+        }
+
+        public IActionResult Confirm()
+        {
+            return View();
+        }
     }
 }
