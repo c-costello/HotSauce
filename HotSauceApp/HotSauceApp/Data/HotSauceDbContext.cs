@@ -13,7 +13,12 @@ namespace HotSauceApp.Data
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CartProduct>().HasKey(ce => new { ce.CartID, ce.ProductID });
+            modelBuilder.Entity<CheckoutProduct>().HasKey(ce => new { ce.CheckoutID, ce.ProductID });
 
+        }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<CartProduct> CartProducts { get; set; }
