@@ -7,5 +7,11 @@ namespace HotSauceApp.Models
 {
     public class CheckoutProduct
     {
+        public int CheckoutID { get; set; }
+        public int ProductID { get; set; }
+        public int Quantity { get; set; }
+
+        public Product Product { get; set; }
+        public Checkout Checkout { get; set; }
     }
 }

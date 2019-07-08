@@ -7,5 +7,9 @@ namespace HotSauceApp.Models
 {
     public class CartProduct
     {
+        public int CartID { get; set; }
+        public int ProductID { get; set; }
+        public int Quantity { get; set; }
+        public int PriceTotal { get; set; }
     }
 }
