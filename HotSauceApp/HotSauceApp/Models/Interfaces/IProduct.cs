@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace HotSauceApp.Models.Interfaces
 {
-    interface IProduct
+    public interface IProduct
     {
+        Task<Product> GetProduct(int id);
+        Task<IEnumerable<Product>> GetAllProducts();
+        Task CreateProduct(Product product);
+        Task UpdateProduct(Product product);
+        Task DeleteProduct(int id);
     }
 }
