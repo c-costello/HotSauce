@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HotSauceApp.Pages
 {
-    public class IndexModel : PageModel
+    public class ContactModel : PageModel
     {
         public void OnGet()
         {

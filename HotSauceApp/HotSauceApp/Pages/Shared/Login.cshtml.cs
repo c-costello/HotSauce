@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace HotSauceApp.Pages
+namespace HotSauceApp.Pages.Shared
 {
-    public class IndexModel : PageModel
+    public class LoginModel : PageModel
     {
         public void OnGet()
         {
