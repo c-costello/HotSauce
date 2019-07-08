@@ -11,6 +11,7 @@ namespace HotSauceApp.Models
         public int ProductID { get; set; }
         public int Quantity { get; set; }
 
+        //Navigational Properties
         public Product Product { get; set; }
         public Checkout Checkout { get; set; }
     }

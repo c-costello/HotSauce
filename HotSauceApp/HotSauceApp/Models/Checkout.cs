@@ -16,7 +16,7 @@ namespace HotSauceApp.Models
         public int ZipCode { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal Total { get; set; }
-
+        //Navigational Properties
         public IEnumerable<CheckoutProduct> CheckoutProducts { get; set; }
     }
 }
