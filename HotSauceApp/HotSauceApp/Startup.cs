@@ -54,6 +54,7 @@ namespace HotSauceApp
             app.UseCookiePolicy();
 
             app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
