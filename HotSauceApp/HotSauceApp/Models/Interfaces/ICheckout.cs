@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace HotSauceApp.Models.Interfaces
 {
-    public class ICheckout
+    public interface ICheckout
     {
+        Task<Checkout> GetCheckout(int id);
+        Task<IEnumerable<Checkout>> GetAllCheckouts();
+        Task CreateCheckout(Checkout checkout);
+        Task UpdateCheckout(Checkout checkout);
+        Task DeleteCheckout(int id);
     }
 }
