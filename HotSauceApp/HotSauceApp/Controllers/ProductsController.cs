@@ -46,7 +46,7 @@ namespace HotSauceApp.Controllers
         public async Task<IActionResult> Edit(Product product)
         {
             await _ProductContext.UpdateProduct(product);
-            return View(product);
+            return Redirect("~/Products/Details/" + product.ID);
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id)
