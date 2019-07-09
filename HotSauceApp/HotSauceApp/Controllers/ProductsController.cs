@@ -33,6 +33,7 @@ namespace HotSauceApp.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             await _ProductContext.CreateProduct(product);
+            //TODO: redirect to Details rather than index
             return RedirectToAction("Index");
         }
 
@@ -40,10 +41,11 @@ namespace HotSauceApp.Controllers
         {
             return View();
         }
-
-        public IActionResult Details(int id)
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            Product product = await _ProductContext.GetProduct(id);
+            return View(product);
         }
 
         public IActionResult Delete()
