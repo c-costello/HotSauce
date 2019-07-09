@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HotSauceApp.Models;
 using HotSauceApp.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,9 +23,17 @@ namespace HotSauceApp.Controllers
             return View(await _ProductContext.GetAllProducts());
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Product product)
+        {
+            await _ProductContext.CreateProduct(product);
+            return RedirectToAction($"Details/{product.ID}");
         }
 
         public IActionResult Edit()
