@@ -32,6 +32,7 @@ namespace HotSauceApp.Controllers
             {
                 ApplicationUser user = new ApplicationUser()
                 {
+                    UserName = rvm.Email,
                     Email = rvm.Email,
                     FirstName = rvm.FirstName,
                     LastName = rvm.LastName,
@@ -41,7 +42,7 @@ namespace HotSauceApp.Controllers
                 if (result.Succeeded)
                 {
                     await _SignInManager.SignInAsync(user, false);
-                    return RedirectToAction("Shop", "Index");
+                    return RedirectToAction("Index", "Shop");
                 }
             }
             return View();

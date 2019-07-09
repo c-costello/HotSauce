@@ -23,7 +23,9 @@ namespace HotSauceApp.Models.ViewModels
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
     }
