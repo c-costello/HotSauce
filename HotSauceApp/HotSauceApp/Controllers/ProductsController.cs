@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HotSauceApp.Models;
+﻿using HotSauceApp.Models;
 using HotSauceApp.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HotSauceApp.Controllers
 {
@@ -62,10 +59,17 @@ namespace HotSauceApp.Controllers
             return View(product);
         }
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirm(Product product)
         {
-            await _ProductContext.DeleteProduct(product.ID);
-            return RedirectToAction("/");
+            Product productReal = await _ProductContext.GetProduct(product.ID);
+            if (productReal.Name == product.Name)
+            {
+                await _ProductContext.DeleteProduct(product.ID);
+                return RedirectToAction("Index");
+            }
+            //TODO send validation error; 
+            return View(productReal);
         }
     }
 }
