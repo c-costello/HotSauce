@@ -1,4 +1,5 @@
 ﻿using HotSauceApp.Data;
+using HotSauceApp.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HotSauceApp.Models.Services
 {
-    public class ProductService
+    public class ProductService : IProduct
     {
         private readonly HotSauceDbContext _context;
 

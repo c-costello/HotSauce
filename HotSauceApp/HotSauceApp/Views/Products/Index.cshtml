@@ -1,6 +1,32 @@
-﻿@{
+﻿@model  IEnumerable<HotSauceApp.Models.Product>;
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 Product Index
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Size</th>
+            <th> Price</th>
+            <th> SKU </th>
+            <th> Quantity </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.Name  </td>
+                <td> @item.ID</td>
+                <td> @item.Size</td>
+                <td> @item.Price</td>
+                <td> @item.SKU</td>
+                <td> @item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
