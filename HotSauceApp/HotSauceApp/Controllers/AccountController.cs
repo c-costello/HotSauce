@@ -47,5 +47,12 @@ namespace HotSauceApp.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Login() => View();
+        public async Task<IActionResult> Login(LoginViewModel lvm)
+        {
+
+        }
     }
 }
