@@ -14,6 +14,7 @@ Product Index
             <th> Price</th>
             <th> SKU </th>
             <th> Quantity </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@ Product Index
                 <td> @item.Price</td>
                 <td> @item.SKU</td>
                 <td> @item.Quantity</td>
+                <td><form method="get" action="Products/Details/@item.ID.ToString()"><button type="submit">Details</button></form></td>
             </tr>
         }
     </tbody>
