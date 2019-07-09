@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HotSauceApp.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotSauceApp.Controllers
 {
+    //TODO: Add Authorization - ADMIN ONLY
     public class ProductsController : Controller
     {
-        public IActionResult Index()
+        private readonly IProduct _ProductContext;
+
+        public ProductsController(IProduct product)
         {
-            return View();
+            _ProductContext = product;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            return View(await _ProductContext.GetAllProducts());
         }
 
         public IActionResult Create()
