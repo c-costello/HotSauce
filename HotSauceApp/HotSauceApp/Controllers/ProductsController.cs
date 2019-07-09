@@ -33,13 +33,20 @@ namespace HotSauceApp.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             await _ProductContext.CreateProduct(product);
-            //TODO: redirect to Details rather than index
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit()
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            Product product = await _ProductContext.GetProduct(id);
+            return View(product);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Product product)
+        {
+            await _ProductContext.UpdateProduct(product);
+            return View(product);
         }
         [HttpGet]
         public async Task<IActionResult> Details(int id)
