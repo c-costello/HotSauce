@@ -33,7 +33,7 @@ namespace HotSauceApp.Controllers
         public async Task<IActionResult> Create(Product product)
         {
             await _ProductContext.CreateProduct(product);
-            return RedirectToAction($"Details/{product.ID}");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Edit()
@@ -41,7 +41,7 @@ namespace HotSauceApp.Controllers
             return View();
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
             return View();
         }

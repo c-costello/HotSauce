@@ -1,6 +1,28 @@
-﻿@{
+﻿@model  HotSauceApp.Models.Product
+@{
     ViewData["Title"] = "Create Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 Create Product
+    <form asp-action="Create">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+        <label asp-for="SKU"></label>
+        <input asp-for="SKU" />
+        <span asp-validation-for="SKU"></span>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+        <label asp-for="Size"></label>
+        <input asp-for="Size" />
+        <span asp-validation-for="Size"></span>
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" />
+        <span asp-validation-for="Quantity"></span>
+        <button type="submit">Create</button>
+    </form>
