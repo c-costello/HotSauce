@@ -55,9 +55,17 @@ namespace HotSauceApp.Controllers
             return View(product);
         }
 
-        public IActionResult Delete()
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            Product product = await _ProductContext.GetProduct(id);
+            return View(product);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirm(Product product)
+        {
+            await _ProductContext.DeleteProduct(product.ID);
+            return RedirectToAction("/");
         }
     }
 }
