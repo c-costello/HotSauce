@@ -23,5 +23,11 @@ namespace HotSauceApp.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel rvm)
+        {
+
+        }
     }
 }
