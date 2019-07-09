@@ -1,6 +1,19 @@
-﻿@{
+﻿@model HotSauceApp.Models.Product
+@{
     ViewData["Title"] = "Delete Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 Delete Product
+Are you sure you want to delete @Model.Name? This is permanent and cannot be reversed.
+
+<form asp-action="Delete">
+    <input type=hidden asp-for="ID" />
+    To Delete, please enter the product name:
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <button type="submit">Delete </button>
+</form>
+<form method="get" action="/Products">
+    <button type="submit">Go Back</button>
+</form>
