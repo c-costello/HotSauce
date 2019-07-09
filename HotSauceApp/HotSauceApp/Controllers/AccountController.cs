@@ -45,14 +45,23 @@ namespace HotSauceApp.Controllers
                     return RedirectToAction("Index", "Shop");
                 }
             }
-            return View();
+            return View(rvm);
         }
 
         [HttpGet]
         public IActionResult Login() => View();
         public async Task<IActionResult> Login(LoginViewModel lvm)
         {
-
+            if (ModelState.IsValid)
+            {
+                var result = await _SignInManager.PasswordSignInAsync(lvm.Email, lvm.Password, false, false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Shop");
+                }
+            }
+            ModelState.AddModelError(string.Empty, "Username and/or Password is incorrect.");
+            return View(lvm);
         }
     }
 }

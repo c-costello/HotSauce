@@ -7,6 +7,7 @@
 Register
 
     <form asp-action="Register">
+        <div asp-validation-summary="All"></div>
         <label asp-for="Email"></label>
         <input asp-for="Email" />
         <span asp-validation-for="Email"></span>
