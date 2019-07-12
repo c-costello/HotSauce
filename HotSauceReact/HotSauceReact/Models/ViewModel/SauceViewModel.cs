@@ -14,6 +14,7 @@ namespace HotSauceReact.Models.ViewModel
         public string Name { get; set; }
         public string SKU { get; set; }
         public string Description { get; set; }
+        public int PurchaseQuantity { get; set; }
         public Product.ProdType ProductType { get; set; }
         public Sauce.Spice SpicyLevel { get; set; }
 

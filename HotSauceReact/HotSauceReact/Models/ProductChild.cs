@@ -11,6 +11,8 @@ namespace HotSauceReact.Models
         public int ProductID { get; set; }
         public string Size { get; set; }
         public string Price { get; set; }
+        public string SKU { get; set; }
+        public int InventoryQuantity { get; set; }
 
     }
 }

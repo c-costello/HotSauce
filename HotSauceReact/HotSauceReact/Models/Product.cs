@@ -9,7 +9,6 @@ namespace HotSauceReact.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string SKU { get; set; }
         public string Description { get; set; }
         public ProdType ProductType { get; set; }
         public enum ProdType { TShirt, HotSauce}
