@@ -10,6 +10,7 @@ namespace HotSauceReact.Models
         public int ProductID { get; set; }
         public string Size { get; set; }
         public string Price { get; set; }
-        public string Color { get; set; }
+        public ColorType Color { get; set; }
+        public enum ColorType { Black, White, Green, Red}  
     }
 }

@@ -8,8 +8,10 @@ namespace HotSauceReact.Models
     public class Sauce : Product
     {
         public int ProductID { get; set; }
-        public string SpicyLevel { get; set; }
+        public Spice SpicyLevel { get; set; }
         public string Size { get; set; }
         public string Price { get; set; }
+        public enum Spice { mild, medium, hot};
+
     }
 }
