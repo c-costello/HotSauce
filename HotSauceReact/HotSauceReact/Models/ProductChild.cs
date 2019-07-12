@@ -7,8 +7,10 @@ namespace HotSauceReact.Models
 {
     abstract public class ProductChild
     {
+        public int ID { get; set; }
         public int ProductID { get; set; }
         public string Size { get; set; }
         public string Price { get; set; }
+
     }
 }
